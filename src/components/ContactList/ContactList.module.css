@@ -1,0 +1,6 @@
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1540px;
+  gap: 24px;
+}

@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1580px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 20px;
+  overflow: auto;
+  background-image: linear-gradient(
+      rgba(118, 8, 207, 0.7),
+      rgba(8, 207, 75, 0.7)
+    ),
+    url(../assets/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.title {
+  color: aliceblue;
+}

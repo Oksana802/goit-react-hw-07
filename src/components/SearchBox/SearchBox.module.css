@@ -1,0 +1,22 @@
+.filter {
+  width: 40vw;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 5px;
+}
+
+.span {
+  color: aliceblue;
+  font-weight: 700;
+}
+.input {
+  min-height: 30px;
+  border-radius: 4px;
+  box-shadow: 1px 1px grey;
+  border: 1px solid gray;
+  outline: transparent;
+  padding: 0 10px;
+  font-size: 20px;
+}
