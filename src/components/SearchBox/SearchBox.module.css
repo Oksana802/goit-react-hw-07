@@ -1,6 +1,6 @@
 .filter {
-  width: 40vw;
-  max-width: 320px;
+  width: 60vw;
+  max-width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -8,8 +8,9 @@
 }
 
 .span {
-  color: aliceblue;
+  color: rgb(247, 255, 240);
   font-weight: 700;
+  margin: 0 auto;
 }
 .input {
   min-height: 30px;
@@ -19,4 +20,10 @@
   outline: transparent;
   padding: 0 10px;
   font-size: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .filter {
+    max-width: 320px;
+  }
 }

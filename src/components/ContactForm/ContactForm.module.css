@@ -1,6 +1,6 @@
 .wrapper {
-  width: 40vw;
-  max-width: 320px;
+  width: 60vw;
+  max-width: 300px;
   background-color: aqua;
 }
 .form {
@@ -48,7 +48,7 @@
   font-size: 18px;
   border: 1px solid rgb(11, 34, 238);
   outline: none;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, color 0.1s ease;
   &:hover {
     color: blue;
     background-color: aquamarine;
@@ -62,5 +62,11 @@
     outline: none;
     border-color: aquamarine;
     transform: translateY(1px);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    max-width: 320px;
   }
 }

@@ -1,9 +1,9 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import s from "./ContactForm.module.css";
-import { nanoid } from "nanoid";
+
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsSlice";
+import { addContact } from "../../redux/contactsOps";
 
 const ContactForm = () => {
   const dispatch = useDispatch();
@@ -15,7 +15,7 @@ const ContactForm = () => {
   const OrderSchema = Yup.object({
     name: Yup.string()
       .min(3, "мінімальна кількість символів - 3")
-      .max(50, "максимальна кількість символів - 50")
+      .max(20, "максимальна кількість символів - 20")
       .required("Це поле є обов'язковим"),
     number: Yup.string()
       .matches(re, "Тільки цифри -10 символів  ")
@@ -24,12 +24,7 @@ const ContactForm = () => {
   });
 
   const handleSubmit = (values, options) => {
-    dispatch(
-      addContact({
-        id: nanoid(),
-        ...values,
-      })
-    );
+    dispatch(addContact(values));
     options.resetForm();
   };
 
@@ -57,7 +52,7 @@ const ContactForm = () => {
               className={s.input}
               type="text"
               name="number"
-              placeholder="Номер телефону може містити тільки цифри"
+              placeholder="Тільки цифри"
             />
             <ErrorMessage name="number" component="div" className={s.error} />
           </label>

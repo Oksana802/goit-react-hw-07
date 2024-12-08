@@ -1,11 +1,9 @@
-.box {
-  flex-basis: calc((100% - 3 * 24px) / 4);
-}
-
 .item {
   display: flex;
+
   justify-content: space-between;
   align-items: center;
+
   gap: 30px;
   padding: 10px;
   border-radius: 4px;
@@ -32,6 +30,7 @@
   border: 1px solid rgb(11, 34, 238);
   outline: none;
   transition: transform 0.2s ease;
+
   &:hover {
     color: blue;
     background-color: aquamarine;
@@ -45,5 +44,17 @@
     outline: none;
     border-color: aquamarine;
     transform: translateY(1px);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .box {
+    flex-basis: calc((100% - 1 * 24px) / 2);
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .box {
+    flex-basis: calc((100% - 3 * 24px) / 4);
   }
 }
