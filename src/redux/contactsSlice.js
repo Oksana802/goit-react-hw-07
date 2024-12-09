@@ -33,7 +33,7 @@ const contactsSlice = createSlice({
         ),
         (state) => {
           state.loading = true;
-          state.error = false;
+          state.error = null;
         }
       )
       .addMatcher(
@@ -42,9 +42,9 @@ const contactsSlice = createSlice({
           deleteContact.rejected,
           addContact.rejected
         ),
-        (state) => {
+        (state, action) => {
           state.loading = false;
-          state.error = true;
+          state.error = action.payload;
         }
       )
       .addMatcher(
@@ -55,6 +55,7 @@ const contactsSlice = createSlice({
         ),
         (state) => {
           state.loading = false;
+          state.error = null;
         }
       );
   },
@@ -67,6 +68,7 @@ export const selectIsError = (state) => state.contacts.error;
 export const selectFilteredContactsMemo = createSelector(
   [selectorContacts, selectNameFilter],
   (contacts, filter) => {
+    if (!filter.trim()) return contacts;
     return contacts.filter((contact) =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
     );

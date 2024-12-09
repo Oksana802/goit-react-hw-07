@@ -7,8 +7,4 @@ export const store = configureStore({
     contacts: contactsReducer,
     filters: filtersReducer,
   },
-  // middleware: (getDefaultMiddleware) =>
-  //   getDefaultMiddleware({
-  //     serializableCheck: false,
-  //   }),
 });

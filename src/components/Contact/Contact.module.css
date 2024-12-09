@@ -1,9 +1,12 @@
+.box {
+  display: flex;
+  justify-content: center;
+}
 .item {
   display: flex;
-
   justify-content: space-between;
   align-items: center;
-
+  width: 244px;
   gap: 30px;
   padding: 10px;
   border-radius: 4px;
@@ -19,7 +22,7 @@
   height: 16px;
 }
 .btn {
-  height: 10%;
+  height: 40px;
   padding: 10px;
   border-radius: 4px;
   color: #ffffff;
@@ -49,6 +52,7 @@
 
 @media screen and (min-width: 768px) {
   .box {
+    max-width: 356px;
     flex-basis: calc((100% - 1 * 24px) / 2);
   }
 }

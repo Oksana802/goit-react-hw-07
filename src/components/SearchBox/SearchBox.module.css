@@ -27,3 +27,8 @@
     max-width: 320px;
   }
 }
+@media screen and (min-width: 1158px) {
+  .span {
+    margin: 0;
+  }
+}

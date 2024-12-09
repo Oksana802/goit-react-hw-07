@@ -23,18 +23,37 @@
 
 .load {
   margin: 0 auto;
-  color: rgb(38, 38, 87);
+  color: #262657;
   font-weight: 700;
-  font-size: 36px;
+  font-size: 24px;
+}
+
+.message {
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+  color: rgb(235, 36, 10);
+  font-weight: 700;
+  font-size: 24px;
 }
 @media screen and (min-width: 768px) {
   .wrapper {
     max-width: 700px;
+  }
+  .message,
+  .load {
+    padding: 20px;
+    font-size: 30px;
   }
 }
 @media screen and (min-width: 1158px) {
   .wrapper {
     max-width: 1580px;
     align-items: start;
+  }
+  .message,
+  .load {
+    padding: 30px;
+    font-size: 36px;
   }
 }

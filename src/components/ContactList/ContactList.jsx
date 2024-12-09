@@ -3,20 +3,14 @@ import Contact from "../Contact/Contact";
 
 import s from "./ContactList.module.css";
 import { selectFilteredContactsMemo } from "../../redux/contactsSlice";
-import { selectNameFilter } from "../../redux/filtersSlice";
 
 const ContactList = () => {
   const contacts = useSelector(selectFilteredContactsMemo);
 
-  const filter = useSelector(selectNameFilter);
-
-  const visibleContacts = contacts.filter((contact) =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
-  );
   return (
-    <div>
+    <div className={s.wrapper}>
       <ul className={s.card}>
-        {visibleContacts.map((contact) => (
+        {contacts.map((contact) => (
           <Contact key={contact.id} {...contact} />
         ))}
       </ul>

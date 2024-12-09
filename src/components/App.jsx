@@ -6,15 +6,16 @@ import ContactList from "./ContactList/ContactList";
 import SearchBox from "./SearchBox/SearchBox";
 import { useEffect } from "react";
 import { fetchContacts } from "../redux/contactsOps";
-import { selectIsLoading } from "../redux/contactsSlice";
+import { selectIsError, selectIsLoading } from "../redux/contactsSlice";
 
 const App = () => {
   const dispatch = useDispatch();
-  const loading = useSelector(selectIsLoading);
+
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
-
+  const loading = useSelector(selectIsLoading);
+  const error = useSelector(selectIsError);
   return (
     <div className={s.wrapper}>
       <h1 className={s.title}>Phonebook</h1>
@@ -23,6 +24,7 @@ const App = () => {
 
       <ContactList />
       {loading && <h2 className={s.load}>Loading...</h2>}
+      {error && <h2 className={s.message}>{error}</h2>}
     </div>
   );
 };
