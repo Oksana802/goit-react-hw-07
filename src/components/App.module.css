@@ -6,7 +6,7 @@
   max-width: 320px;
   height: 100vh;
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px;
   overflow: auto;
   background-image: linear-gradient(
       rgba(118, 8, 207, 0.7),
@@ -39,6 +39,7 @@
 @media screen and (min-width: 768px) {
   .wrapper {
     max-width: 700px;
+    padding: 20px;
   }
   .message,
   .load {
