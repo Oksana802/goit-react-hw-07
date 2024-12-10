@@ -65,7 +65,7 @@ export const selectorContacts = (state) => state.contacts.items;
 export const selectIsLoading = (state) => state.contacts.loading;
 export const selectIsError = (state) => state.contacts.error;
 
-export const selectFilteredContactsMemo = createSelector(
+export const selectFilteredContacts = createSelector(
   [selectorContacts, selectNameFilter],
   (contacts, filter) => {
     if (!filter.trim()) return contacts;
